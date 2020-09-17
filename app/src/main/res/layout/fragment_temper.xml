@@ -1,11 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+    android:paddingTop="10dp"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+    android:background="@color/background_color"
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <TextView
-        android:text="temper"
+    <RelativeLayout
+        android:layout_marginBottom="10dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="40dp">
+
+        <TextView
+            android:gravity="center_vertical"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:text="온도관리"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+
+        <Button
+            android:id="@+id/temper_add_btn"
+            android:layout_alignParentRight="true"
+            android:textSize="30sp"
+            android:textColor="#ffffff"
+            android:text="+"
+            android:background="@drawable/round_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/temper_recyview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/bottom_btns"
+            android:layout_marginBottom="19dp">
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <LinearLayout
+            android:id="@+id/bottom_btns"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:textSize="20sp"
+                android:textColor="#ffffff"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/round_button"
+                android:text="초기화"
+                android:layout_marginBottom="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:textSize="20sp"
+                android:textColor="#ffffff"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/round_button"
+                android:text="저장"
+                android:layout_marginBottom="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
 
 </LinearLayout>
